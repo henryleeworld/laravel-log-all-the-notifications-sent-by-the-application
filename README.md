@@ -30,5 +30,5 @@ $ php artisan migrate
 ![](https://i.imgur.com/yitoQ3F.png)
 > 使用者從新設備登入時會接收電子郵件通知
 
-![](https://i.imgur.com/oX0rTP8.png)
+![](https://i.imgur.com/BZn3x7p.png)
 > 儀表板顯示使用者全部個人電子郵件通知
