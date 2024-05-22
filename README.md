@@ -1,4 +1,4 @@
-# Laravel 10 紀錄應用程式寄送所有通知
+# Laravel 11 紀錄應用程式寄送所有通知
 
 引入 spatie 的 laravel-notification-log 套件來擴增紀錄應用程式寄送通知，通常，通知訊息都很簡短，訊息會用來通知你的使用者某些應用程式的資訊。
 
@@ -20,6 +20,10 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
+- 執行 __Artisan__ 指令的 __queue:work__ 來處理被推送進隊列內的新任務。
+```sh
+$ php artisan queue:work
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/register` 來進行註冊。
 - 完成註冊後，可以經由 `/login` 來進行登入。
@@ -27,8 +31,8 @@ $ php artisan migrate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/yitoQ3F.png)
+![](https://i.imgur.com/uTcODnf.png)
 > 使用者從新設備登入時會接收電子郵件通知
 
-![](https://i.imgur.com/BZn3x7p.png)
+![](https://i.imgur.com/bWW5WdB.png)
 > 儀表板顯示使用者全部個人電子郵件通知

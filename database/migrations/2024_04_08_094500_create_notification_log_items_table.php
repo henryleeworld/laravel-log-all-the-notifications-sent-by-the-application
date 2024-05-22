@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
         Schema::create('notification_log_items', function (Blueprint $table) {
             $table->id();
@@ -17,9 +20,11 @@ return new class extends Migration
             $table->string('fingerprint')->nullable();
             $table->json('extra')->nullable();
             $table->json('anonymous_notifiable_properties')->nullable();
-            $table->text('exception_message')->nullable();
             $table->dateTime('confirmed_at')->nullable();
             $table->timestamps();
+
+            $table->index(['notifiable_type', 'notifiable_id']);
+            $table->index(['created_at']);
         });
     }
 };

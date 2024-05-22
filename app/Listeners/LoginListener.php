@@ -11,12 +11,18 @@ class LoginListener
 {
     public Request $request;
 
+    /**
+     * Create the event listener.
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
     }
 
-    public function handle($event): void
+    /**
+     * Handle the event.
+     */
+    public function handle(Login $event): void
     {
         if ($event->user) {
             $user = $event->user;

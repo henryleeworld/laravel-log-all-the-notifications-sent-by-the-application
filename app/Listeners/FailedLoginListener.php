@@ -15,7 +15,7 @@ class FailedLoginListener
         $this->request = $request;
     }
 
-    public function handle($event): void
+    public function handle(Failed $event): void
     {
         if ($event->user) {
             $log = [
