@@ -15,19 +15,30 @@ class NewDevice extends Notification implements ShouldQueue
 
     public array $log;
 
+    /**
+     * Create a new notification instance.
+     */
     public function __construct(array $log)
     {
         $this->log = $log;
     }
 
-    public function via($notifiable)
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @return array<int, string>
+     */
+    public function via(object $notifiable): array
     {
         return ['mail'];
     }
 
-    public function toMail($notifiable)
+    /**
+     * Get the mail representation of the notification.
+     */
+    public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage())
+        return (new MailMessage)
             ->subject(__('Your :app account logged in from a new device.', ['app' => config('app.name')]))
             ->markdown('emails.new', [
                 'account' => $notifiable,
@@ -35,6 +46,12 @@ class NewDevice extends Notification implements ShouldQueue
                 'ipAddress' => $this->log['ip_address'],
                 'browser' => $this->log['user_agent'],
             ]);
+    }
+
+    public function toNexmo($notifiable)
+    {
+        return (new NexmoMessage())
+            ->content(__('Your :app account logged in from a new device.', ['app' => config('app.name')]));
     }
 
     public function toSlack($notifiable)
@@ -51,11 +68,5 @@ class NewDevice extends Notification implements ShouldQueue
                     __('Browser') => $this->log['user_agent'],
                 ]);
             });
-    }
-
-    public function toNexmo($notifiable)
-    {
-        return (new NexmoMessage())
-            ->content(__('Your :app account logged in from a new device.', ['app' => config('app.name')]));
     }
 }

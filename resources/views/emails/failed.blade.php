@@ -8,7 +8,7 @@
 > **@lang('IP Address:')** {{ $ipAddress }}<br/>
 > **@lang('Browser:')** {{ $browser }}<br/>
 
-@lang('If this was you, you can ignore this alert. If you suspect any suspicious activity on your account, please change your password.')
+@lang('If this was you, you can ignore this alert. If you suspect any suspicious activity on your account, please change your password.')<br/>
 
 @lang('Regards,')<br/>
 {{ config('app.name') }}

@@ -1,4 +1,4 @@
-# Laravel 11 紀錄應用程式寄送所有通知
+# Laravel 12 紀錄應用程式寄送所有通知
 
 引入 spatie 的 laravel-notification-log 套件來擴增紀錄應用程式寄送通知，通常，通知訊息都很簡短，訊息會用來通知你的使用者某些應用程式的資訊。
 
@@ -31,8 +31,8 @@ $ php artisan queue:work
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/uTcODnf.png)
+![](https://i.imgur.com/ddzkEkP.png)
 > 使用者從新設備登入時會接收電子郵件通知
 
-![](https://i.imgur.com/bWW5WdB.png)
+![](https://i.imgur.com/fNMoVM1.png)
 > 儀表板顯示使用者全部個人電子郵件通知

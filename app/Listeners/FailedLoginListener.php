@@ -10,11 +10,17 @@ class FailedLoginListener
 {
     public Request $request;
 
+    /**
+     * Create the event listener.
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
     }
 
+    /**
+     * Handle the event.
+     */
     public function handle(Failed $event): void
     {
         if ($event->user) {
